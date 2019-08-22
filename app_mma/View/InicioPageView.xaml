@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="app_mma.View.InicioPageView">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFF" VerticalOptions="FillAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+
+            <Image
+                Source=""
+                HorizontalOptions="CenterAndExpand"
+                VerticalOptions="CenterAndExpand" />
+
+
+            <FlexLayout
+                Margin="10"
+                Grid.Row="1"  Direction="Column" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+                <Label
+                    Margin="5"
+                    Text="Entre com seu Nome:"
+                    HorizontalTextAlignment="Center"
+                    TextColor="#000" />
+
+                <Entry
+                    Margin="5"
+                    Keyboard="Text"
+                    Placeholder="João"
+                    Text="{Binding Usuario}"
+                    WidthRequest="180"
+                    MaxLength="15"
+                    HorizontalOptions="Center"
+                    HorizontalTextAlignment="Center" />
+
+                <Button
+                    Margin="5"
+                    Text="Entrar"
+                    TextColor="#000"
+                    BackgroundColor="#CCC"
+                    Command="{Binding EntrarCommand}"/>
+
+            </FlexLayout>
+            
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
