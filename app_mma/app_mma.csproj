@@ -8,11 +8,14 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="CarouselView.FormsPlugin" Version="5.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="View\" />
     <Folder Include="ViewModel\" />
     <Folder Include="Model\" />
     <Folder Include="Util\" />
+    <Folder Include="Service\" />
   </ItemGroup>
 </Project>

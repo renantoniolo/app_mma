@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+ 
+    x:Class="app_mma.View.HomePageView">
+    <ContentPage.Content>
+        <StackLayout>
+        <ListView
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            SeparatorVisibility="None"
+            HasUnevenRows="True"
+            Margin="10"
+            ItemsSource="{Binding List_Lutadores}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell Height="240">
+                        <Grid Margin="5,10" >
+                            <Frame HasShadow="False" Padding="0" BackgroundColor="#CCC" >
+
+                                <Label Text="{Binding Nome}" TextColor="Black" FontSize="Medium" />
+
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+
+        </ListView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
