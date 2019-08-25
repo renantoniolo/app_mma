@@ -1,4 +1,6 @@
 ﻿using System;
+using app_mma.Interface;
+using app_mma.Service;
 using app_mma.View;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +13,11 @@ namespace app_mma
         {
             InitializeComponent();
 
+            //registra interface
+            DependencyService.Register<IAlertService, AlertService>();
+
             MainPage = new InicioPageView();
+
         }
 
         protected override void OnStart()

@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="Resultado Final"
+    x:Class="app_mma.View.ResultadoPageView">
+    <ContentPage.Content>
+        <Grid Margin="10" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="90"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Frame
+                Grid.Row="0"
+                Margin="20,10"
+                HasShadow="False"
+                Padding="0"
+                BackgroundColor="Yellow">
+
+                <FlexLayout
+                    Margin="10"
+                    Direction="Column">
+
+                    <Label
+                        Text="CAMPEÃO"
+                        TextColor="Black"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold"/>
+
+                    <Label
+                        Text="{Binding Lutadores_Finalistas[0].Nome}"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"/>
+
+                </FlexLayout>
+
+            </Frame>
+
+            <Frame
+                Grid.Row="1"
+                Margin="20,10"
+                HasShadow="False"
+                Padding="0"
+                BackgroundColor="#CCC" >
+
+                <FlexLayout
+                    Margin="10"
+                    Direction="Column">
+
+                    <Label
+                        Text="VICE-CAMPEÃO"
+                        TextColor="Black"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="{Binding Lutadores_Finalistas[1].Nome}"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"/>
+
+                </FlexLayout>
+
+            </Frame>
+
+            <Frame
+                Grid.Row="2"
+                Margin="20,10"
+                HasShadow="False"
+                Padding="0"
+                BackgroundColor="DarkOrange" >
+
+                <FlexLayout
+                    Margin="10"
+                    Direction="Column">
+
+                    <Label
+                        Text="TERCEIRO"
+                        TextColor="Black"
+                        FontSize="Large"
+                        HorizontalTextAlignment="Center"
+                        FontAttributes="Bold" />
+
+                    <Label
+                        Text="{Binding Lutadores_Finalistas[2].Nome}"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"/>
+
+                </FlexLayout>
+
+            </Frame>
+
+            <Button
+                Grid.Row="3"
+                Margin="40,10"
+                BackgroundColor="Gray"
+                Text="Sair" TextColor="#000"
+                VerticalOptions="End"
+                Command="{Binding FecharCommand}" />
+
+        </Grid>
+        
+    </ContentPage.Content>
+
+</ContentPage>

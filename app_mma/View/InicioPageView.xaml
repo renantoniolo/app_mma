@@ -2,28 +2,34 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    BackgroundColor="#F6F6F6"
     x:Class="app_mma.View.InicioPageView">
     <ContentPage.Content>
         <Grid HorizontalOptions="FillAndExpand" BackgroundColor="#FFF" VerticalOptions="FillAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
 
-
             <Image
-                Source=""
+                Source="logo_mma.jpg"
+                Margin="50,50"
                 HorizontalOptions="CenterAndExpand"
                 VerticalOptions="CenterAndExpand" />
 
 
             <FlexLayout
                 Margin="10"
-                Grid.Row="1"  Direction="Column" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                Grid.Row="1"
+                Direction="Column"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
 
                 <Label
                     Margin="5"
                     Text="Entre com seu Nome:"
+                    FontAttributes="Bold"
                     HorizontalTextAlignment="Center"
                     TextColor="#000" />
 
@@ -32,9 +38,8 @@
                     Keyboard="Text"
                     Placeholder="João"
                     Text="{Binding Usuario}"
-                    WidthRequest="180"
                     MaxLength="15"
-                    HorizontalOptions="Center"
+                    HorizontalOptions="FillAndExpand"
                     HorizontalTextAlignment="Center" />
 
                 <Button
@@ -45,6 +50,13 @@
                     Command="{Binding EntrarCommand}"/>
 
             </FlexLayout>
+
+             <Label
+                 Grid.Row="2"
+                 Text="2019 - Renan Toniolo Rocha"
+                 TextColor="#000"
+                 HorizontalOptions="CenterAndExpand"
+                 VerticalOptions="CenterAndExpand" />
             
         </Grid>
         

@@ -2,34 +2,78 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
- 
-    x:Class="app_mma.View.HomePageView">
+    x:Class="app_mma.View.HomePageView"
+    Title="Torneio de Luta"
+    xmlns:invert="clr-namespace:app_mma.Util"
+    xmlns:local="clr-namespace:app_mma.Componentes"
+    BackgroundColor="#F6F6F6">
+        <ContentPage.Resources>
+        <ResourceDictionary>
+            <invert:BoolConverter x:Key="BoolConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-        <ListView
-            HorizontalOptions="FillAndExpand"
-            VerticalOptions="FillAndExpand"
-            SeparatorVisibility="None"
-            HasUnevenRows="True"
-            Margin="10"
-            ItemsSource="{Binding List_Lutadores}">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell Height="240">
-                        <Grid Margin="5,10" >
-                            <Frame HasShadow="False" Padding="0" BackgroundColor="#CCC" >
 
-                                <Label Text="{Binding Nome}" TextColor="Black" FontSize="Medium" />
+        
+        <Grid Margin="0,0,0,5" RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
 
-                            </Frame>
-                        </Grid>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-            
+                <StackLayout Margin="10,5" BackgroundColor="Transparent">
 
-        </ListView>
+                    <Label
+                        Text="{Binding Usuario, StringFormat='Bem vindo {0:F0}, escolha seus lutadores.'}"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+                        TextColor="#000" />
 
-        </StackLayout>
+                </StackLayout>
+
+                <ActivityIndicator
+                    Grid.Row="1"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="80"
+                    HeightRequest="80"
+                    Color="#000"
+                    IsRunning="True"
+                    IsVisible="{Binding IsLoad}"
+                    BackgroundColor="Transparent" />
+
+                <ListView
+                    Grid.Row="1"
+                    IsVisible="{Binding IsLoad, Converter={StaticResource BoolConverter}}"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    SeparatorVisibility="None"
+                    BackgroundColor="Transparent"
+                    HasUnevenRows="True"
+                    SelectedItem="{Binding LutadorSelecionado}"
+                    Margin="10,0"
+                    ItemsSource="{Binding List_Lutadores}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <local:LutadorViewCell></local:LutadorViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+                <Grid Margin="10,5" Grid.Row="2">
+
+                    <Button
+                        Text="INICIAR TORNEIO"
+                        HorizontalOptions="FillAndExpand"
+                        Command="{Binding IniciarCombateCommand}"
+                        BackgroundColor="Gray"
+                        TextColor="#FFF" />
+
+                </Grid>
+
+            </Grid>
+
     </ContentPage.Content>
 </ContentPage>

@@ -12,8 +12,8 @@ namespace app_mma.Model
 
         public int Idade { get; set; }
 
-        [JsonProperty("ArtesMarcais")]
-        public List<ArtesMarcais> Artes_Marcais { get; set; }
+        [JsonProperty("ArtesMarciais")]
+        public List<string> ArtesMarciais { get; set; }
 
         public int Lutas { get; set; }
 
@@ -21,11 +21,8 @@ namespace app_mma.Model
 
         public int Vitorias { get; set; }
 
-    }
-
-    public class ArtesMarcais {
-
-        public string Nome { get; set; }
+        [JsonIgnore]
+        public int Pontucao { get; set; } = 0;
 
     }
         

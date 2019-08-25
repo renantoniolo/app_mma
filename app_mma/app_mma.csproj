@@ -17,5 +17,7 @@
     <Folder Include="Model\" />
     <Folder Include="Util\" />
     <Folder Include="Service\" />
+    <Folder Include="Interface\" />
+    <Folder Include="Componentes\" />
   </ItemGroup>
 </Project>
